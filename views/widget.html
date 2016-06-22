@@ -1,0 +1,13 @@
+<h4 class="apos-tweets-header"><a href="http://twitter.com/{{ data.options.account | e }}">@{{ data.options.account | e }}</a></h4>
+
+<ul class="apos-tweets">
+  {%- for tweet in data.tweets -%}
+    <li class="apos-tweet">
+      <span class="apos-tweet-profile">
+        <span class="apos-tweet-profile-image"></span>
+        <a class="apos-tweet-screen-name" href="https://twitter.com/{{ tweet.user.screen_name | e }}">@{{ tweet.user.screen_name | e }}</a><a class="apos-tweet-date" href="https://twitter.com/{{ tweet.user.screen_name | e }}/status/{{ tweet.id_str }}">{{ module.getRelativeTime(tweet.created_at) }}</a>
+      </span>
+      <span class="apos-tweet-text">{{ module.linkifyTweet(tweet.text) | safe }}</span>
+    </li>
+  {%- endfor -%}
+</ul>
