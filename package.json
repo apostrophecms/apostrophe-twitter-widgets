@@ -1,6 +1,6 @@
 {
   "name": "apostrophe-twitter-widgets",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Adds a Twitter feed widget to Apostrophe's rich content editor",
   "main": "index.js",
   "scripts": {
@@ -8,21 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/punkave/apostrophe-twitter-widgets.git"
+    "url": "git://github.com/apostrophecms/apostrophe-twitter-widgets.git"
   },
   "keywords": [
     "apostrophe",
+    "apostrophecms",
     "jot",
-    "rich",
-    "text",
-    "rich",
-    "content",
     "twitter"
   ],
   "author": "P'unk Avenue punkave.com",
   "license": "MIT",
   "dependencies": {
-    "extend": "^2.0.0",
     "lodash": "^4.17.11",
     "simple-twitter": "~1.0.3",
     "qs": "^1.0.0",
