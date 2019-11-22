@@ -1,4 +1,4 @@
-var twitter = require('simple-twitter');
+var Twitter = require('simple-twitter');
 var _ = require('lodash');
 var qs = require('qs');
 var moment = require('moment');
@@ -26,6 +26,18 @@ module.exports = {
         def: 3
       }
     ].concat(options.addFields || []);
+
+    options.arrangeFields = [
+      {
+        name: 'basics',
+        label: 'Basics',
+        fields: [
+          'account',
+          'hashtag',
+          'limit'
+        ]
+      }
+    ].concat(options.arrangeFields || []);
   },
 
   construct: function (self, options) {
@@ -156,7 +168,7 @@ module.exports = {
 
     self.getReader = function () {
       if (!self.reader) {
-        self.reader = new twitter(consumerKey, consumerSecret, accessToken, accessTokenSecret);
+        self.reader = new Twitter(consumerKey, consumerSecret, accessToken, accessTokenSecret);
       }
       return self.reader;
     };
