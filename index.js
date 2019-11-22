@@ -26,6 +26,18 @@ module.exports = {
         def: 3
       }
     ].concat(options.addFields || []);
+
+    options.arrangeFields = [
+      {
+        name: 'basics',
+        label: 'Basics',
+        fields: [
+          'account',
+          'hashtag',
+          'limit'
+        ]
+      }
+    ].concat(options.arrangeFields || []);
   },
 
   construct: function (self, options) {
