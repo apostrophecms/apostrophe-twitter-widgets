@@ -19,10 +19,10 @@
   "author": "P'unk Avenue punkave.com",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
-    "simple-twitter": "~1.0.3",
+    "lodash": "^4.17.15",
+    "moment": "^2.10.6",
     "qs": "^1.0.0",
-    "moment": "^2.10.6"
+    "simple-twitter": "~1.0.3"
   },
   "devDependencies": {
     "eslint": "^4.2.0",
