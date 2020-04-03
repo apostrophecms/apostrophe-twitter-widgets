@@ -86,16 +86,28 @@ module.exports = {
 
       if (username && list) {
         url = 'lists/statuses';
-        params = { list_id: list, count: count };
+        params = {
+          list_id: list,
+          count: count
+        };
       } else if (username && !hashtag) {
         url = 'statuses/user_timeline';
-        params = { screen_name: username, count: count };
+        params = {
+          screen_name: username,
+          count: count
+        };
       } else if (username && hashtag) {
         url = 'search/tweets';
-        params = { q: 'from:' + username + ' ' + hashtag, count: count };
+        params = {
+          q: 'from:' + username + ' ' + hashtag,
+          count: count
+        };
       } else if (hashtag && !username) {
         url = 'search/tweets';
-        params = { q: hashtag, count: count };
+        params = {
+          q: hashtag,
+          count: count
+        };
       }
 
       return self.getTwitter(url, params, function (err, results) {
@@ -192,7 +204,10 @@ module.exports = {
           console.error('error:', err);
           return callback(err);
         }
-        tweetCache[url + params] = { when: (new Date()).getTime(), results: results };
+        tweetCache[url + params] = {
+          when: (new Date()).getTime(),
+          results: results
+        };
         return callback(null, JSON.parse(results));
       });
     };
