@@ -21,7 +21,7 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "moment": "^2.10.6",
-    "qs": "^1.0.0",
+    "qs": "^6.9.3",
     "simple-twitter": "~1.0.3"
   },
   "devDependencies": {
