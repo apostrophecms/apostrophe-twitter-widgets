@@ -42,7 +42,7 @@ module.exports = {
 
   construct: function (self, options) {
     if (!options.consumerKey) {
-      console.error('WARNING: you must configure the consumerKey, consumerSecret, accessToken and accessTokenSecret options to use the Twitter widget.');
+      self.apos.utils.error('WARNING: you must configure the consumerKey, consumerSecret, accessToken and accessTokenSecret options to use the Twitter widget.');
     }
     var consumerKey = options.consumerKey;
     var consumerSecret = options.consumerSecret;
@@ -66,7 +66,7 @@ module.exports = {
       var widgetOptions = req.body || {};
       var username = self.apos.launder.string((widgetOptions.account || ''));
       var hashtag = self.apos.launder.string((widgetOptions.hashtag || ''));
-      var list = widgetOptions.list ? apos.slugify(self.apos.launder.string(widgetOptions.list)) : false;
+      var list = widgetOptions.list ? self.apos.slugify(self.apos.launder.string(widgetOptions.list)) : false;
       var count = widgetOptions.limit || 5;
       var url;
 
@@ -145,7 +145,7 @@ module.exports = {
 
     self.helpers = {
       linkifyTweetUrls: function (text) {
-        return text.replace(/https?\:\/\/\S+/g, function (url) {
+        return text.replace(/https?:\/\/\S+/g, function (url) {
           var urlSansPeriod = url.replace(/\.$/, '');
           if (url.match(/…$/)) {
             // Useless URL
@@ -155,13 +155,13 @@ module.exports = {
         });
       },
       linkifyTweetMentions: function (text) {
-        return text.replace(/\@[^\s\,\.\!\?\:\/]+/g, function (user) {
+        return text.replace(/@[^\W]+/g, function (user) {
           var result = '<a class="apos-twitter-mention" href="http://twitter.com/' + self.apos.utils.escapeHtml(user.substr(1)) + '" target="blank">' + user + '</a>';
           return result;
         });
       },
       linkifyTweetHashtags: function (text) {
-        return text.replace(/\#[^\s\,\.\!\?\:\/]+/g, function (hashtag) {
+        return text.replace(/#[^\W]+/g, function (hashtag) {
           return '<a class="apos-twitter-hashtag" href="http://twitter.com/' + self.apos.utils.escapeHtml(hashtag) + '" target="blank">' + hashtag + '</a>';
         });
       },
@@ -201,7 +201,7 @@ module.exports = {
       }
       return self.getReader().get(url, params, function (err, results) {
         if (err) {
-          console.error('error:', err);
+          self.apos.utils.error('error:', err);
           return callback(err);
         }
         tweetCache[url + params] = {

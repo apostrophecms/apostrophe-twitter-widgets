@@ -1,7 +1,3 @@
 {
-  "extends": "apostrophe",
-  "globals": {
-    "$": "readonly",
-    "apos": "readonly"
-  }
+  "extends": "apostrophe"
 }
