@@ -1,10 +1,10 @@
 {
   "name": "apostrophe-twitter-widgets",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Adds a Twitter feed widget to Apostrophe's rich content editor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx eslint ."
   },
   "repository": {
     "type": "git",
@@ -16,22 +16,21 @@
     "jot",
     "twitter"
   ],
-  "author": "P'unk Avenue punkave.com",
+  "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
     "moment": "^2.10.6",
-    "qs": "^1.0.0",
+    "qs": "^6.9.3",
     "simple-twitter": "~1.0.3"
   },
   "devDependencies": {
-    "eslint": "^4.2.0",
-    "eslint-config-punkave": "^1.0.8",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint": "^6.8.0",
+    "eslint-config-apostrophe": "^3.1.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

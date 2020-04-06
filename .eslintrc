@@ -1,7 +1,3 @@
 {
-  "extends": "punkave",
-  "globals": {
-    "$": 1,
-    "apos": 1
-  }
+  "extends": "apostrophe"
 }

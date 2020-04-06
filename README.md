@@ -1,6 +1,8 @@
+[![CircleCI](https://circleci.com/gh/apostrophecms/apostrophe-twitter-widgets/tree/master.svg?style=svg)](https://circleci.com/gh/apostrophecms/apostrophe-twitter-widgets/tree/master)
+
 # apostrophe-twitter-widgets
 
-apostrophe-twitter-widgets is a module for the [Apostrophe](http://apostrophenow.org) content management system. apostrophe-twitter-widgets lets you add a Twitter feed to any content area created with Apostrophe.
+apostrophe-twitter-widgets is a module for the [Apostrophe](https://apostrophecms.com) content management system. apostrophe-twitter-widgets lets you add a Twitter feed to any content area created with Apostrophe.
 
 ## Requirements
 
