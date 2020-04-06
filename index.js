@@ -155,13 +155,13 @@ module.exports = {
         });
       },
       linkifyTweetMentions: function (text) {
-        return text.replace(/@[\w]+/g, function (user) {
+        return text.replace(/@\w+/g, function (user) {
           var result = '<a class="apos-twitter-mention" href="http://twitter.com/' + self.apos.utils.escapeHtml(user.substr(1)) + '" target="blank">' + user + '</a>';
           return result;
         });
       },
       linkifyTweetHashtags: function (text) {
-        return text.replace(/#[\w]+/g, function (hashtag) {
+        return text.replace(/#\w+/g, function (hashtag) {
           return '<a class="apos-twitter-hashtag" href="http://twitter.com/' + self.apos.utils.escapeHtml(hashtag) + '" target="blank">' + hashtag + '</a>';
         });
       },
