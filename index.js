@@ -119,7 +119,9 @@ module.exports = {
         if (results.statuses) {
           results = results.statuses;
         }
-        results.forEach(tweet => tweet.text = tweet.full_text);
+        results.forEach(tweet => {
+          tweet.text = tweet.full_text;
+        });
         return res.send(self.render(req, 'widget', {
           options: widgetOptions,
           tweets: results
