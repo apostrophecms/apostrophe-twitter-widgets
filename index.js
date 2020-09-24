@@ -110,6 +110,8 @@ module.exports = {
         };
       }
 
+      params.tweet_mode = 'extended';
+
       return self.getTwitter(url, params, function (err, results) {
         if (err) {
           results = [];
@@ -117,6 +119,9 @@ module.exports = {
         if (results.statuses) {
           results = results.statuses;
         }
+        results.forEach(tweet => {
+          tweet.text = tweet.full_text;
+        });
         return res.send(self.render(req, 'widget', {
           options: widgetOptions,
           tweets: results
